@@ -20,10 +20,10 @@ jobs:
         docker push begninix/ezops-backend:master
 
     - name: recreate containers
-      uses: appleboy/ssh-action@master
       with:
+        command: |
+          docker-compose pull && docker-compose up -d
         host: ${{ secrets.HOST }}
-        username: ${{ secrets.USERNAME }}
-        password: ${{ secrets.PASSWORD }}
-        port: ${{ secrets.PORT }}
-        script: docker-compose pull && docker-compose up -d
+        user: ubuntu
+        key: ${{ secrets.PASSWORD}}
+    
