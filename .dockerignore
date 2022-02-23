@@ -1,0 +1,10 @@
+.env
+.git
+.vscode
+.eslintrc
+.prettierrc
+.gitignore
+yarn.lock
+package-lock.json
+README.md
+node_modules
