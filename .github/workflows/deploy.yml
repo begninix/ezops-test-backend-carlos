@@ -19,8 +19,8 @@ jobs:
         docker image build -t begninix/ezops-backend:master .
         docker push begninix/ezops-backend:master
 
-    - uses: appleboy/ssh-action@master
     - name: recreate containers
+      uses: appleboy/ssh-action@master
       with:
         host: ${{ secrets.HOST }}
         username: ${{ secrets.USERNAME }}
